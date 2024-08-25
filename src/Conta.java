@@ -41,11 +41,14 @@ public class Conta
         }
         if(valor > this.saldo)
         {
-            System.out.println("Saque inválido, saldo insuficiente");
+            System.out.println("transferencia inválida, saldo insuficiente");
         }
-        System.out.println("Transferindo....");
-        this.saldo = saldo - valor;
-        contaDestino.saldo = saldo + valor;
+        else
+        {
+            System.out.println("Transferindo....");
+            this.saldo = saldo - valor;
+            contaDestino.saldo += valor;
+        }
         return true;
     }
     public void exibirSaldo() {
